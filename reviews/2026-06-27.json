@@ -1,0 +1,57 @@
+{
+  "date": "2026-06-27",
+  "generated": "2026-06-27 (Beijing, weekend)",
+  "data_session": "2026-06-26 (Fri) close for all markets",
+  "theme": "全球AI/半导体解杠杆 + 苹果涨价共振，亚太机械式抛售",
+  "markets": {
+    "cn_hk": {
+      "indices": {
+        "上证指数": {"close": 4027.26, "chg_pct": -2.26},
+        "深证成指": {"close": 15782.22, "chg_pct": -3.44},
+        "创业板指": {"close": 4194.21, "chg_pct": -4.07},
+        "科创50": {"close": null, "chg_pct": -2.5},
+        "恒生指数": {"close": null, "chg_pct": -1.76, "note": "跌破23000"},
+        "恒生科技": {"close": null, "chg_pct": -3.32}
+      },
+      "turnover": "3.58万亿",
+      "breadth": "超4600只下跌",
+      "margin_balance": "首破3万亿元，全周净买入663亿",
+      "leaders_up": ["凯盛科技(涨停)", "中材科技", "中国巨石"],
+      "leaders_down": ["中际旭创(成交444.81亿第一)", "新易盛", "中天科技(跌停)", "联讯仪器(-14.81%)"],
+      "tech_levels": {"上证": "4000生命线", "创业板": "4200失守", "恒指": "23000得而复失"}
+    },
+    "us": {
+      "indices": {
+        "纳斯达克": {"close": 25297.62, "chg_pct": -0.24, "week_pct": -4.6, "note": "5连跌"},
+        "标普500": {"close": 7354.02, "chg_pct": -0.05, "week_pct": -2.0},
+        "道琼斯": {"close": 51876.11, "chg_pct": -0.09, "week_pct": 0.6}
+      },
+      "leaders_up": ["Moderna +11.88%"],
+      "leaders_down": ["ON Semiconductor -22.58%", "Apple -6.1%(6/25)", "SoftBank", "Arm", "Marvell", "AMD", "Micron", "Intel"],
+      "drivers": ["OpenAI IPO或推迟", "美联储转鹰(PCE上修3.6%/点阵图现加息)", "资金向防御/价值/小盘轮动"]
+    },
+    "jp_kr_tw": {
+      "indices": {
+        "日经225": {"close": 69360, "chg_pct": -4.1, "note": "跌破7万,史上第5大点数跌幅"},
+        "KOSPI": {"close": 8411.21, "chg_pct": -5.81, "note": "盘中熔断,本周第二次"},
+        "台湾加权": {"close": null, "chg_pct": -3.3}
+      },
+      "leaders_down": ["SK海力士 -8%", "三星电子", "铠侠Kioxia", "台积电"],
+      "driver": "创新高后季末获利了结+苹果涨价点名存储成本,内存链成震中,算法机械抛售"
+    }
+  },
+  "wsj_highlights": [
+    "苹果涨价Mac15-20%/iPad15-25%(存储芯片成本),触发全球科技抛售",
+    "数据中心热潮引发美国第三波通胀",
+    "美光被称全球最重要股票之一",
+    "OpenAI限制最新模型访问;Anthropic指控阿里巴巴大规模蒸馏攻击(2.5万虚假账户);DeepSeek融资74亿拟扩员一倍",
+    "美国对伊朗新一轮袭击,霍尔木兹海峡停火受考验",
+    "美禁中资EV极星在美售新车;欧盟下调对美关税;摩根大通任命联席总裁"
+  ],
+  "watch": {
+    "risks": ["AI/半导体解杠杆未结束", "美联储转鹰降息落空", "OpenAI IPO延期", "霍尔木兹地缘", "A股杠杆破3万亿踩踏"],
+    "opportunities": ["医疗/生物科技/防御轮动", "A股涨价/先进封装主线(玻璃基板/玻纤/存储)", "纳指5连跌后反弹窗口"],
+    "key_dates": ["6/30 中国6月PMI", "7月初美国非农", "7月中CPI/PPI", "7/28-29 FOMC", "7月下旬科技财报"]
+  },
+  "disclaimer": "仅为信息整理与边际分析，不构成投资建议"
+}
