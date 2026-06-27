@@ -1,0 +1,59 @@
+name: 每日美股盘后简报
+
+on:
+  schedule:
+    # UTC 时间。22:00 UTC ≈ 美东 18:00(EDT) / 17:00(EST)，即美股 16:00 收盘后。
+    # 周二至周六运行，对应美东周一至周五的交易日盘后。
+    - cron: "0 22 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "目标交易日 YYYY-MM-DD（留空则自动推断最近交易日）"
+        required: false
+        default: ""
+      force:
+        description: "覆盖已存在的简报（true/false）"
+        required: false
+        default: "false"
+
+# 允许工作流提交并推送生成的简报文件
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-briefing
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出仓库
+        uses: actions/checkout@v4
+
+      - name: 配置 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 安装依赖
+        run: pip install -r scripts/requirements.txt
+
+      - name: 生成简报
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          BRIEFING_DATE: ${{ github.event.inputs.date }}
+          FORCE: ${{ github.event.inputs.force == 'true' && '1' || '' }}
+        run: python scripts/generate_briefing.py
+
+      - name: 提交并推送
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if [ -z "$(git status --porcelain briefings/)" ]; then
+            echo "无新增简报，跳过提交。"
+            exit 0
+          fi
+          git add briefings/
+          git commit -m "chore: 自动生成美股盘后简报"
+          git push
